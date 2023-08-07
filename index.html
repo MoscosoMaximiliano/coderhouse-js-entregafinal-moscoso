@@ -11,20 +11,26 @@
 </head>
 
 <body>
-  <div class="swiper-button-prev"></div>
+  
   <div class="swiper mySwiper">
     <div class="swiper-wrapper" id="swiper-container">
       
     </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
-  <div class="swiper-button-next"></div>
-  <script src="script.js"></script>
+  
+  
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
+  <script src="script.js"></script>
 
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
+      observer: true,
+      observeParents: true,
+      parallax:true,
+      
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
