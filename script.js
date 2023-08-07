@@ -57,9 +57,17 @@ const LoadData = () => {
                 container.appendChild(stat)
             }
         }
+        let button = document.createElement("button")
+        button.textContent = "Select"
+        button.onclick = () => {
+            alert(`You select ${playerClass.name}`)
+        }
+        container.appendChild(button)
 
         document.getElementById("swiper-container").appendChild(container)
     })
+
+    
 }
 
 
