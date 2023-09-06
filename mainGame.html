@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/game.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <h2>Basic Information</h2>
+
+        <label for="">Name</label>
+        <input type="text" id="playerClassName" disabled />
+        <label for="">Birthday</label>
+        <input type="text" id="playerClassBirthday" disabled />
+      </fieldset>
+      <fieldset>
+        <h2>Stats</h2>
+        <label for="">Defense</label>
+        <div class="segmented-container">
+          <i class="fa fa-shield fa-2x selected"></i>
+          <input type="text" id="playerClassDefense" disabled />
+        </div>
+
+        <label for="">Magic Defense</label>
+        <div class="segmented-container">
+          <i class="fa fa-shield fa-shield-magic fa-2x selected"></i>
+          <input type="text" id="playerClassMagicDefense" disabled />
+        </div>
+
+        <hr />
+
+        <label for="">Strength</label>
+        <div class="segmented-container">
+          <i class="fa fa-hand-rock-o fa-2x selected"></i>
+          <input type="text" id="playerClassStrength" disabled />
+        </div>
+
+        <label for="">Luck</label>
+        <div class="segmented-container">
+          <i class="fa fa-star fa-2x selected"></i>
+          <input type="text" id="playerClassLuck" disabled />
+        </div>
+
+        <label for="">Magic Power</label>
+        <div class="segmented-container">
+          <i class="fa fa-book fa-2x selected"></i>
+          <input type="text" id="playerClassMagicPower" disabled />
+        </div>
+      </fieldset>
+      <fieldset>
+        <h2>Evolutions</h2>
+        <ul id="playerClassEvolutions"></ul>
+      </fieldset>
+    </form>
+
+    <button id="resetButton">Delete Player</button>
+
+    <script src="./js/game.js"></script>
+  </body>
+</html>

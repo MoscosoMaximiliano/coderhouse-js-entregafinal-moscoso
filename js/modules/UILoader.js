@@ -1,5 +1,8 @@
 import { ToastifyMessage } from "./Toastify.js"
+import {GetRandomValue} from "./utils.js"
+import {PlayerClass} from "./CharacterClass.js"
 export const LoadData = (playerClasses) => {
+    console.log("asd");
     // Creation of page content
     playerClasses.forEach((playerClass, i) => {
         let container = document.createElement("div")
@@ -27,13 +30,6 @@ const LoadClassContent = (playerClass, container, i) => {
             let stat = document.createElement("h3")
             stat.textContent = `${value}: ${playerClass.stats[value]}`
 
-            if (playerClass.stats[value] < 5)
-                stat.style.color = "red"
-            else if (playerClass.stats[value] === 5)
-                stat.style.color = "black"
-            else
-                stat.style.color = "green" 
-
             container.appendChild(stat)
         }
     }
@@ -51,13 +47,14 @@ const LoadClassContent = (playerClass, container, i) => {
     button.textContent = "Select"
 
     button.onclick = () => {
-        alert(`You select ${playerClass.name}`)
+        window.localStorage.setItem("player", JSON.stringify(playerClass))
 
-        const name = prompt("Enter your name")
+        ToastifyMessage("Class Selected, redirecting to new page")
 
-        playerClass.name = name
-
-        //? TODO: Load a table with the selected class
+        let changeScreen = setTimeout(() => {
+            window.location.href = "http://127.0.0.1:5500/mainGame.html"
+            window.clearTimeout(changeScreen)
+        }, 3000) // 3 seconds
     }
 
     container.appendChild(button)
@@ -68,30 +65,49 @@ export const clearContentTable = () => {
     document.getElementById("swiper-container").replaceChildren()
 }
 
-export const CreateNewClass = () => {
-    console.log("Creating New Class")
+export const CreateNewClass = (e) => {
+    e.preventDefault()
 
-    let name, birthday, strength, defense, magicPower, magicDefense, speed, luck
+    let formData = document.getElementById("createClassForm")
 
-    //! Need Validation
-    name = prompt("Name of the class")
-    birthday = prompt("Birthday (e.x 12/03/2012)")
-    alert("Now you going to setup the stats of you new class")
-    strength = prompt("Enter the strength")
-    defense = prompt("Enter the defense")
-    magicPower = prompt("Enter the Magic Power")
-    magicDefense = prompt("Enter the Magic Defense")
-    speed = prompt("Enter the Speed")
-    luck = prompt("Enter the luck")
+    let newPlayer = new PlayerClass(
+        formData.elements["nameClass"].value,
+        formData.elements["birthdayClass"].value,
+        {
+            "strength": formData.elements["strenghtClass"].value,
+            "defense": formData.elements["defenseClass"].value,
+            "magicPower": formData.elements["magicPowerClass"].value,
+            "magicDefense": formData.elements["magicDefenseClass"].value,
+            "speed": formData.elements["speedClass"].value,
+            "luck": formData.elements["luckClass"].value,
+        },
+        EvolutionsList()
+    )
+
+    console.log(newPlayer);
+
+    window.localStorage.setItem("player", JSON.stringify(newPlayer))
     
-    alert("Now can say the possible evolutions of the character (need to be separated with a 'comma' if has multiples evolutions")
-    evolutions = prompt("Enter evolutions")
-    evolutions = evolutions.split(",")
-    
-    playerClasses.push(new PlayerClass(name, birthday, {strength, defense, magicPower, magicDefense, speed, luck}, evolutions))
+    ToastifyMessage("Created and selected character, redirecting to new page")
 
-    clearContentTable()
-    LoadData()
-    ToastifyMessage("Added a new Class")
+    let changeScreen = setTimeout(() => {
+        window.location.href = "http://127.0.0.1:5500/mainGame.html"
+        window.clearTimeout(changeScreen)
+    }, 3000) // 3 seconds
+}
+
+const EvolutionsList = () => {
+    let containerEvolutions = document.getElementById("evolutionsClassHolder")
+    let checkboxes = containerEvolutions.querySelectorAll('input[type="checkbox"]')
+    
+    let result = []
+
+    checkboxes.forEach((item) => {
+        if(item.checked) {
+            result.push(item.value)
+        }
+    })
+
+    return result
 }
 

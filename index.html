@@ -12,6 +12,10 @@
 </head>
 
 <body>
+
+  <div>
+    <h1>Select a class</h1>
+  </div>
   
   <div class="swiper mySwiper">
     <div class="swiper-wrapper" id="swiper-container">
@@ -20,12 +24,73 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
+
+  <div id="modal" class="modal-create">
+    <div class="modal-content">
+      <span id="closeModal" class="modal-close">&times;</span>
+      <form id="createClassForm">
+        <div class="stats-container-item">
+          <label for="name">Name:</label>
+          <input id="nameClass" name="name" placeholder="Enter the name of your character" type="text">
+          <label for="birthday">Birthday</label>
+          <input type="date" name="birthday" id="birthdayClass">
+        </div>
+
+        <hr>
+        <div id="statsClassHolder" class="stats-grid">
+          <div class="stats-item">
+            <label for="strenght">Strenght</label>
+            <input type="number" name="strenght" id="strenghtClass">
+          </div>
+          <div class="stats-item">
+            <label for="defense">Defense</label>
+            <input type="number" name="defense" id="defenseClass">
+          </div>
+          <div class="stats-item">
+            <label for="magicPower">Magic Power</label>
+            <input type="number" name="magicPower" id="magicPowerClass">
+          </div>
+          <div class="stats-item">
+            <label for="magicDefense">Magic Defense</label>
+            <input type="number" name="magicDefense" id="magicDefenseClass">
+          </div>
+          <div class="stats-item">
+            <label for="speed">Speed</label>
+            <input type="number" name="speed" id="speedClass">
+          </div>
+          <div class="stats-item">
+            <label for="luck">Luck</label>
+            <input type="number" name="luck" id="luckClass">
+          </div>
+        </div>
+
+        <hr>
+        <div class="stats-container-item">
+          <label for="evoluctions">Evolutions</label>
+          <div id="evolutionsClassHolder" class="evolutions-container">
+            <label for="Berserk">Berserk</label>
+            <input type="checkbox" name="Berserk" value="Berserk" id="Berserk">
+            <label for="Berserk">Sniper</label>
+            <input type="checkbox" name="Sniper" value="Sniper" id="Sniper">
+          </div>
+        </div>
+        
+        <button id="btnCreateClass" class="btn" type="submit">Create</button>
+      </form>
+      
+    </div>
+  </div>
+
+  <div>
+    <h3>Or you can create a new class</h3>
+  </div>
   
-  <button id="btnCreateClass" class="btn" role="button">Create Class</button>
+  <button id="openModal" class="btn" role="button">Create Class</button>
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script type="module" src="./js/script.js"></script>
+  <script type="module" src="./js/modules/modalController.js"></script>
 
   <!-- Initialize Swiper -->
   <script>
