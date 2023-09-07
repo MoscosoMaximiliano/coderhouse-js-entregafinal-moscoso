@@ -5,7 +5,7 @@ window.onload = () => {
         if(window.location.host === "127.0.0.1:5500")
             window.location.href = `/mainGame.html`
         else
-            window.location.href = `/coderhouse-js-preentrega3-moscoso/mainGame.html`
+            window.location.href = `/coderhouse-js-preentrega3-moscoso/`
     }
     
 
