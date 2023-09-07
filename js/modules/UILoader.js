@@ -52,7 +52,10 @@ const LoadClassContent = (playerClass, container, i) => {
         ToastifyMessage("Class Selected, redirecting to new page")
 
         let changeScreen = setTimeout(() => {
-            window.location.href = "http://127.0.0.1:5500/mainGame.html"
+            if(window.location.host === "127.0.0.1:5500")
+                window.location.href = `/mainGame.html`
+            else
+                window.location.href = `/coderhouse-js-preentrega3-moscoso/mainGame.html`
             window.clearTimeout(changeScreen)
         }, 3000) // 3 seconds
     }
@@ -91,7 +94,10 @@ export const CreateNewClass = (e) => {
     ToastifyMessage("Created and selected character, redirecting to new page")
 
     let changeScreen = setTimeout(() => {
-        window.location.href = "http://127.0.0.1:5500/mainGame.html"
+        if(window.location.host === "127.0.0.1:5500")
+            window.location.href = `/mainGame.html`
+        else
+            window.location.href = `/coderhouse-js-preentrega3-moscoso/mainGame.html`
         window.clearTimeout(changeScreen)
     }, 3000) // 3 seconds
 }
