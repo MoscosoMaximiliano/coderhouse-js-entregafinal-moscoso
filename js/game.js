@@ -1,8 +1,13 @@
 window.onload = () => {
     let playerData = window.localStorage.getItem("player")
 
-    if(playerData === null)
-        window.location.href = `/coderhouse-js-preentrega3-moscoso/`
+    if(playerData === null) {
+        if(window.location.host === "127.0.0.1:5500")
+            window.location.href = `/mainGame.html`
+        else
+            window.location.href = `/coderhouse-js-preentrega3-moscoso/mainGame.html`
+    }
+    
 
     playerData = JSON.parse(playerData)
 
