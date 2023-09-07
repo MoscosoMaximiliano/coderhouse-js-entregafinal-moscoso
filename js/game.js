@@ -2,7 +2,7 @@ window.onload = () => {
     let playerData = window.localStorage.getItem("player")
 
     if(playerData === null)
-        window.location.href = `${window.location.host}/coderhouse-js-preentrega3-moscoso/`
+        window.location.href = `/coderhouse-js-preentrega3-moscoso/`
 
     playerData = JSON.parse(playerData)
 
