@@ -11,7 +11,10 @@ window.onload = () => {
         document.getElementById("createClassForm").addEventListener("submit", CreateNewClass)
     } else {
         // TODO: Load data and enter the game
-        window.location.href = "http://127.0.0.1:5500/mainGame.html"
+        if(document.location.pathname === "http://127.0.0.1:5500")
+            window.location.href = "http://127.0.0.1:5500/mainGame.html"
+        else
+            window.location.href = "https://moscosomaximiliano.github.io/coderhouse-js-preentrega3-moscoso/mainGame.html"
     }
     
 }
