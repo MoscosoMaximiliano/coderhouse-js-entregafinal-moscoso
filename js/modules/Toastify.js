@@ -1,7 +1,7 @@
 export const ToastifyMessage = (msg) => {
     Toastify({
         text: msg,
-        duration: 1000,
+        duration: 2500,
         newWindow: true,
         close: true,
         gravity: "top", // `top` or `bottom`

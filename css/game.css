@@ -1,0 +1,88 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+* {
+  font-family: sans-serif;
+  color: white;
+  box-sizing: border-box;
+}
+
+body { 
+  background-color: #272436;
+}
+
+.glyphicon {
+  font-size: 200%;
+}
+
+form {
+  display: flex;
+  flex-flow: row;
+}
+
+input, textarea {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.segmented-container {
+  width: 250px;
+}
+
+.fa {
+  opacity: 0.3;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.fa:hover {
+  opacity: 0.75;
+}
+
+.fa.selected {
+  opacity: 1;
+}
+
+.fa-heart {
+  color: red;
+}
+
+.fa-star {
+  color: yellow;
+}
+
+.fa-book {
+  color: brown;
+}
+
+.fa-shield-magic {
+  color: aqua;
+}
+
+#resetButton {
+  color: black;
+}
+
+.segmented-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+fieldset {
+  width: 33%;
+  margin: 10px;
+  border-width: 0;
+}

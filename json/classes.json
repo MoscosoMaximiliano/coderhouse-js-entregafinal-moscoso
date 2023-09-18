@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Human",
+        "birthday": "20/08/1598",
+        "stats": {
+            "strength": 5,
+            "defense": 7,
+            "magicPower": 2,
+            "magicDefense": 5,
+            "speed": 7,
+            "luck": 2
+        },
+        "evolutions": ["Warrior", "Rogue", "Warlock"],
+        "portrait": ""
+    },
+    {
+        "name": "Elf",
+        "birthday": "01/12/1200",
+        "stats": {
+            "strength": 1,
+            "defense": 2,
+            "magicPower": 8,
+            "magicDefense": 4,
+            "speed": 11,
+            "luck": 5
+        },
+        "evolutions": ["Warrior", "Rogue", "Warlock"],
+        "portrait": ""
+    }
+]
