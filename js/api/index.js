@@ -1,6 +1,6 @@
 export const GetJsonData = async() => {
-    if(window.location.host === "127.0.0.1:550") {
-        return await fetch("../../json/classes.json")
+    if(window.location.host === "127.0.0.1:5500") {
+        return await fetch("../json/classes.json")
         .then(res => res.json())
         .then(data => {return data})
         .catch((err) => {

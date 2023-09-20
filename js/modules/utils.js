@@ -14,9 +14,9 @@ export const GetRandomDate = () => {
 }
 
 export const ChangePage = () => {
-    window.location.href = (window.location.host === "127.0.0.1:5500") ? 
-    (window.localStorage.getItem("player") === null) ? "/" :
-    "/mainGame.html" :
-    (window.localStorage.getItem("player") === null) ? "/coderhouse-js-entregafinal-moscoso/" :
-    "/coderhouse-js-entregafinal-moscoso/mainGame.html"
+    if (window.location.host === "127.0.0.1:5500") {
+        window.location.href = window.localStorage.getItem("player") === null ? "/" : "/mainGame.html"
+    } else {
+        window.location.href = window.localStorage.getItem("player") === null ? "/coderhouse-js-entregafinal-moscoso/" : "/coderhouse-js-entregafinal-moscoso/mainGame.html"
+    }
 }
