@@ -6,7 +6,6 @@ window.onload = () => {
         ChangePage()
     }
     
-
     playerData = JSON.parse(playerData)
 
     console.log(playerData);

@@ -17,6 +17,6 @@ export const ChangePage = () => {
     window.location.href = (window.location.host === "127.0.0.1:5500") ? 
     (window.localStorage.getItem("player") === null) ? "/" :
     "/mainGame.html" :
-    (window.localStorage.getItem("player") === null) ? "/coderhouse-js-entregafinal-moscoso/mainGame.html" :
-    "/coderhouse-js-entregafinal-moscoso/"
+    (window.localStorage.getItem("player") === null) ? "/coderhouse-js-entregafinal-moscoso/" :
+    "/coderhouse-js-entregafinal-moscoso/mainGame.html"
 }
