@@ -1,5 +1,5 @@
 import { ToastifyMessage } from "./Toastify.js"
-import {GetRandomValue} from "./utils.js"
+import {ChangePage} from "./utils.js"
 import {PlayerClass} from "./CharacterClass.js"
 export const LoadData = (playerClasses) => {
     console.log("asd");
@@ -52,10 +52,7 @@ const LoadClassContent = (playerClass, container, i) => {
         ToastifyMessage("Class Selected, redirecting to new page")
 
         let changeScreen = setTimeout(() => {
-            if(window.location.host === "127.0.0.1:5500")
-                window.location.href = `/mainGame.html`
-            else
-                window.location.href = `/coderhouse-js-preentrega3-moscoso/mainGame.html`
+            ChangePage()
             window.clearTimeout(changeScreen)
         }, 3000) // 3 seconds
     }
@@ -64,9 +61,6 @@ const LoadClassContent = (playerClass, container, i) => {
     
 }
 
-export const clearContentTable = () => {
-    document.getElementById("swiper-container").replaceChildren()
-}
 
 export const CreateNewClass = (e) => {
     e.preventDefault()
@@ -94,10 +88,7 @@ export const CreateNewClass = (e) => {
     ToastifyMessage("Created and selected character, redirecting to new page")
 
     let changeScreen = setTimeout(() => {
-        if(window.location.host === "127.0.0.1:5500")
-            window.location.href = `/mainGame.html`
-        else
-            window.location.href = `/coderhouse-js-preentrega3-moscoso/mainGame.html`
+        ChangePage()
         window.clearTimeout(changeScreen)
     }, 3000) // 3 seconds
 }

@@ -1,21 +1,23 @@
-import { LoadData, clearContentTable, CreateNewClass } from "./modules/UILoader.js"
+import { ToastifyMessage } from "./modules/Toastify.js"
+import { LoadData, CreateNewClass } from "./modules/UILoader.js"
+import { GetJsonData } from "./api/index.js"
+import { ChangePage } from "./modules/utils.js"
 
-import playerClasses from "../json/classes.json" assert {type: "json"}
-
-window.onload = () => {
+window.onload = async () => {
     let playerData =  window.localStorage.getItem("player")
 
     if(playerData === null){
-        LoadData(playerClasses)
+        try {
+            playerData = await GetJsonData()
+            LoadData(playerData)
+        } catch (error) {
+            ToastifyMessage("Error loading the Data")
+        }
+        
 
         document.getElementById("createClassForm").addEventListener("submit", CreateNewClass)
     } else {
-        // TODO: Load data and enter the game
-        if(window.location.host === "127.0.0.1:5500")
-            window.location.href = `/mainGame.html`
-        else
-            window.location.href = `/coderhouse-js-preentrega3-moscoso/mainGame.html`
+        ChangePage()
     }
     
 }
-

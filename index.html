@@ -31,7 +31,7 @@
       <form id="createClassForm">
         <div class="stats-container-item">
           <label for="name">Name:</label>
-          <input id="nameClass" name="name" placeholder="Enter the name of your character" type="text">
+          <input id="nameClass" name="name" placeholder="Enter the name of your character" type="text" onkeydown="return /[a-z]/i.test(event.key)">
           <label for="birthday">Birthday</label>
           <input type="date" name="birthday" id="birthdayClass">
         </div>
@@ -40,27 +40,27 @@
         <div id="statsClassHolder" class="stats-grid">
           <div class="stats-item">
             <label for="strenght">Strenght</label>
-            <input type="number" name="strenght" id="strenghtClass">
+            <input type="number" min="1" max="12" name="strenght" id="strenghtClass">
           </div>
           <div class="stats-item">
             <label for="defense">Defense</label>
-            <input type="number" name="defense" id="defenseClass">
+            <input type="number" min="1" max="12" name="defense" id="defenseClass">
           </div>
           <div class="stats-item">
             <label for="magicPower">Magic Power</label>
-            <input type="number" name="magicPower" id="magicPowerClass">
+            <input type="number" min="1" max="12" name="magicPower" id="magicPowerClass">
           </div>
           <div class="stats-item">
             <label for="magicDefense">Magic Defense</label>
-            <input type="number" name="magicDefense" id="magicDefenseClass">
+            <input type="number" min="1" max="12" name="magicDefense" id="magicDefenseClass">
           </div>
           <div class="stats-item">
             <label for="speed">Speed</label>
-            <input type="number" name="speed" id="speedClass">
+            <input type="number" min="1" max="12" name="speed" id="speedClass">
           </div>
           <div class="stats-item">
             <label for="luck">Luck</label>
-            <input type="number" name="luck" id="luckClass">
+            <input type="number" min="1" max="12" name="luck" id="luckClass">
           </div>
         </div>
 
@@ -70,7 +70,7 @@
           <div id="evolutionsClassHolder" class="evolutions-container">
             <label for="Berserk">Berserk</label>
             <input type="checkbox" name="Berserk" value="Berserk" id="Berserk">
-            <label for="Berserk">Sniper</label>
+            <label for="Sniper">Sniper</label>
             <input type="checkbox" name="Sniper" value="Sniper" id="Sniper">
           </div>
         </div>
@@ -94,7 +94,7 @@
 
   <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper(".mySwiper", {
+    let swiper = new Swiper(".mySwiper", {
       observer: true,
       observeParents: true,
       parallax:true,

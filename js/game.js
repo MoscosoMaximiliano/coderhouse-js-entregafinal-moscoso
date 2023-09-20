@@ -1,11 +1,9 @@
+import { ChangePage } from "./modules/utils.js"
 window.onload = () => {
     let playerData = window.localStorage.getItem("player")
 
     if(playerData === null) {
-        if(window.location.host === "127.0.0.1:5500")
-            window.location.href = `/mainGame.html`
-        else
-            window.location.href = `/coderhouse-js-preentrega3-moscoso/`
+        ChangePage()
     }
     
 
@@ -36,8 +34,5 @@ const LoadDataPlayer = (playerData) => {
 
 document.getElementById("resetButton").addEventListener("click", () => {
     window.localStorage.removeItem('player') 
-    if(window.location.host === "127.0.0.1:5500")
-        window.location.href = `/mainGame.html`
-    else
-        window.location.href = `/coderhouse-js-preentrega3-moscoso/`
+    ChangePage()
 })

@@ -76,21 +76,29 @@ body {
     position: relative;
     background-color: white;
     margin: auto;
-    padding: 20px;
-    width: 60%;
+    padding: 25px;
+    width: 45%;
+    height: 60%;
     animation-name: showModal;
     animation-duration: 0.5s;
+    border-radius: 25px;
 }
 
+
 .modal-close {
-    color: black;
+    color: white;
     float: right;
+    background-color: #272436;
+    padding: 5px;
+    width: auto;
+    border-radius: 9999px;
 }
 
 .modal-close:hover, .modal-close:focus {
-    color: white;
+    color: black;
     text-decoration: none;
     cursor: pointer;
+    background-color: white;
 }
 
 .stats-grid {
@@ -114,10 +122,11 @@ body {
 }
 
 #createClassForm {
-    justify-content: center;
-    align-items: center;
-    align-items: center;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+
 }
 
 input, textarea {
