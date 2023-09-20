@@ -14,10 +14,9 @@ export const GetRandomDate = () => {
 }
 
 export const ChangePage = () => {
-    console.log(window.location.href)
     window.location.href = (window.location.host === "127.0.0.1:5500") ? 
     (window.localStorage.getItem("player") === null) ? "/" :
     "/mainGame.html" :
-    (window.localStorage.getItem("player") === null) ? "/coderhouse-js-preentrega3-moscoso/mainGame.html" :
-    "/coderhouse-js-preentrega3-moscoso/"
+    (window.localStorage.getItem("player") === null) ? "/coderhouse-js-entregafinal-moscoso/mainGame.html" :
+    "/coderhouse-js-entregafinal-moscoso/"
 }
