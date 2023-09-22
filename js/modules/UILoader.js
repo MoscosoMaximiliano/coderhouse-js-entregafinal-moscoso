@@ -4,11 +4,11 @@ import {PlayerClass} from "./CharacterClass.js"
 export const LoadData = (playerClasses) => {
     console.log("asd");
     // Creation of page content
-    playerClasses.forEach((playerClass, i) => {
+    playerClasses.map((playerClass, index) => {
         let container = document.createElement("div")
         container.className = "swiper-slide"
 
-        LoadClassContent(playerClass, container, i)
+        LoadClassContent(playerClass, container, index)
 
         document.getElementById("swiper-container").appendChild(container)
     })
